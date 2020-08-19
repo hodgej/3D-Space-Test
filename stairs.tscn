@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/stairs_up.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://assets/Concrete_001_COLOR.png" type="Texture" id=2]
+[ext_resource path="res://assets/Checkered.png" type="Texture" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 3 )
+uv1_scale = Vector3( 5, 5, 5 )
+
+[sub_resource type="BoxShape" id=3]
+
+[node name="stairs" type="StaticBody"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 0.144815, -0.561549, 0, 0.317308, 2.67151, 0, 1, 1 )
+shape = SubResource( 3 )
